@@ -14,8 +14,18 @@ package uk.ac.westminster.products_api;
  *   JavaBean convention: provide a getter called getEmail().
  */
 public class Person {
+
     private String name;
-    private String email;   // ← new field
+    private String email;
+
+    public Person() {
+    }
+
+    public Person(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
 
     public String getName() {
         return name;
@@ -25,11 +35,9 @@ public class Person {
         this.name = name;
     }
 
-    public String getEmail() {   // ← new getter (JavaBean convention)
-        return email;
-    }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
 
-    public void setEmail(String email) {  // optional, but consistent
-        this.email = email;
-    }
+    // TODO (Activity 3): add the "email" field and its getter here.
+
 }
