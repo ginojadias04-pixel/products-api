@@ -1,25 +1,23 @@
 package uk.ac.westminster.products_api;
 
-
-
 public class Product {
 
     private Long id;
     private String name;
     private double price;
 
-    // No-arg constructor (Required for Jackson/Spring)
+    // empty constructor: Jackson needs it to build a Product from POST JSON
     public Product() {
     }
 
-    // Full constructor
+    // full constructor: for your own code
     public Product(Long id, String name, double price) {
         this.id = id;
         this.name = name;
         this.price = price;
     }
 
-    // Getters
+    // GETTERS: Jackson uses these to write the JSON
     public Long getId() {
         return id;
     }
@@ -32,7 +30,7 @@ public class Product {
         return price;
     }
 
-    // Setters (NEW for Tutorial 3)
+    // SETTERS: the service uses setId(); Jackson uses all three when JSON comes in
     public void setId(Long id) {
         this.id = id;
     }
