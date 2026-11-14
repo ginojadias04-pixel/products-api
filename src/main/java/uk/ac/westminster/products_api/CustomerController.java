@@ -7,16 +7,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/customers")
-
-
 public class CustomerController {
 
     @GetMapping("/{id}")
-    public Customer getById(@PathVariable Long id){
+    public Customer getById(@PathVariable Long id) {
+
         Address address = new Address(
-                "115 New Cavendish Street",
-                "London",
-                "WIW GUW");
-        return new Customer(id, "Ada Lovelace","ada@example.com", address);
+                "115 New Cavendish Street", "London", "W1W 6UW");   // build the Address first
+
+        return new Customer(id, "Ada Lovelace",
+                "ada@example.com", address);                        // then put it inside the Customer
     }
 }
